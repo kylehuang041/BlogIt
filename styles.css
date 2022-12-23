@@ -1,20 +1,19 @@
 /*
  * Name: Kyle Huang
- * Date: 12/19/2022
+ * Date: 10/12/2022
  *
- * This is the styles.css page of index.html.
- * It has the design/style code to make it more visually appealing.
+ * This is the styles.css page of index.html containing the design/style code
+ * to make it more visually appealing.
  */
 
 :root {
   --white-color: #fff;
-  --blog-btn-size: 2em;
+  --delete-btn-size: 2em;
   --nav-bg-color: #0f394c;
   --bg-color: #001417;
-  --title-color: #2f9cca;
-  --nav-btn-color: radial-gradient(#fff, #c5c5c5);
+  --title-header-bg-color: #2f9cca;
+  --blog-bg-btn: radial-gradient(#fff, #c5c5c5);
   --blog-bg-color: #122c36;
-  --input-border: 0.15rem solid rgb(45, 100, 124);
 }
 
 body {
@@ -31,51 +30,46 @@ body {
 
 /* navigation */
 nav {
-  padding: 0 0.5em;
   display: flex;
   justify-content: space-between;
+  padding: 0 1em;
   background: var(--nav-bg-color);
 }
 
 #nav-list {
-  gap: 10px;
   display: flex;
   align-items: center;
 }
 
 #nav-list li {
   list-style: none;
+  margin-left: 1em;
 }
 
 /* title */
 header {
   text-align: left;
-  color: var(--title-color);
+  color: var(--title-header-bg-color);
   display: flex;
-  cursor: pointer;
-}
-
-header h1:hover {
-  text-shadow: 0 0 5px rgb(0, 116, 106);
 }
 
 header h1 {
   align-self: center;
 }
 
-header h1, #blog-container {
+header h1, main {
   margin: 0 auto;
 }
 
 /* create and delete button */
-.nav-btn {
+#create-blog-btn, #blog-clear {
   padding: 0.2em 0.6em;
   border-radius: 10px;
   border-color: transparent;
-  background: var(--nav-btn-color);
+  background: var(--blog-bg-btn);
 }
 
-.nav-btn:hover {
+#create-blog-btn:hover, #blog-clear:hover {
   background: var(--white-color);
 }
 
@@ -116,53 +110,6 @@ header h1, #blog-container {
   transition: left 0.2s ease-in-out;
 }
 
-/* main */
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* search bar & error Message */
-#search-container, #error {
-  margin-top: 1.1em;
-}
-
-#search-container {
-  display: flex;
-  border-radius: 50px;
-  border: var(--input-border);
-  width: 50%;
-  min-width: 18rem;
-  height: 35px;
-}
-
-#search-bar {
-  border: none;
-  outline: none;
-  position: relative;
-  width: 80%;
-  left: 0.6em;
-}
-
-.fa-magnifying-glass {
-  align-self: center;
-  position: relative;
-  left: 0.75em;
-  cursor: pointer;
-}
-
-.fa-magnifying-glass:hover {
-  color:rgb(44, 179, 206);
-}
-
-#error {
-  background: rgb(165, 69, 69);
-  width: 70%;
-  padding: 0.75em 1em;
-  border-radius: 20px;
-}
-
 /* blogs */
 .blogs {
   margin: 1.2em auto;
@@ -176,64 +123,47 @@ main {
   border-radius: 5px;
 }
 
-.text-inputs:focus {
-  outline: 0.15rem solid rgb(24, 78, 61);
+[type="text"], textarea {
+  padding: 0.3rem;
+  box-sizing: border-box;
+  background: transparent;
+  border-radius: 10px;
+  border: 0.15rem solid rgb(45, 100, 124);
+  color: var(--white-text);
 }
 
-#title {
+[type="text"]:focus, textarea:focus {
+  outline: 0.1rem solid rgb(24, 78, 61);
+}
+
+[type="text"] {
   font-size: 2em;
   font-weight: bold;
 }
 
 .text-inputs {
-  padding: 0.3rem;
-  box-sizing: border-box;
-  background: transparent;
-  border-radius: 10px;
-  border: var(--input-border);
-  color: var(--white-text);
   font-size: 1.6em;
 }
 
-.blog-div-1 {
+.extra {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.blog-div-2 {
-  display: inline-block;
-}
-
-.blog-btn {
-  height: var(--blog-btn-size);
-  width: var(--blog-btn-size);
+.delete-btn {
+  height: var(--delete-btn-size);
+  width: var(--delete-btn-size);
   font-size: 0.95rem;
   border-radius: 10px;
   border: none;
 }
 
-#delete-btn {
-  margin-left: calc(var(--blog-btn-size) / 3);
-}
-
-#delete-btn:hover {
+.delete-btn:hover {
   background: rgb(244, 120, 120);
 }
 
-#save-btn:hover {
-  background: rgb(18, 172, 219);
-}
-
 /* color change */
-.search-color-change {
-  color: #00416f;
-}
-
-.color-switch-circle-change {
-  left: 17px;
-}
-
 .blog-color-change {
   color: #00416f;
   background: #a9e1ca;
@@ -249,9 +179,4 @@ main {
 
 .nav-bg-color-change {
   background: #5ab6dd;
-}
-
-/* Class(es) used by blog.js */
-.hidden {
-  display: none;
 }

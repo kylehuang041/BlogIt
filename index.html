@@ -4,31 +4,26 @@
   Name: Kyle Huang
   Date: 10/12/2022
 
-  This is index.html page of ....
-  It contains the structures and contents of a blog website
+  This is index.html page of of the blog website,it contains the structures
+  and contents.
 -->
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="blogs.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="img/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <script src="blogs.js"></script>
+    <script src="index.js"></script>
     <title>BlogIt</title>
   </head>
   <body>
-
-    <!-- NAVIGATION -->
     <nav>
-      <!--Title-->
       <header>
-        <h1 id="page-title">BlogIt</h1>
+        <h1>BlogIt</h1>
       </header>
-      <!-- List -->
       <ul id="nav-list">
-        <!-- Dark Mode Switch -->
         <li id="color-changer">
           <span>Dark</span>
           <div id="color-change-container">
@@ -36,23 +31,10 @@
           </div>
           <span>Light</span>
         </li>
-        <!-- Blog Buttons -->
-        <li><button class="nav-btn" id="create-blog-btn"> + Create</button></li>
-        <li><button class="nav-btn" id="clear-blogs-btn"> - Delete All</button></li>
+        <li><button id="create-blog-btn"> + Create</button></li>
+        <li><button id="blog-clear"> - Delete All</button></li>
       </ul>
     </nav>
-
-    <!-- MAIN -->
-    <main>
-      <!-- Search Bar -->
-      <div id="search-container">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" class="text-inputs" id="search-bar" name="search-bar">
-      </div>
-      <!-- Error Message -->
-      <h2 id="error" class="hidden"></h2>
-      <!-- Contains the blog(s) -->
-      <div id="blog-container"></div>
-    </main>
+    <main></main>
   </body>
 </html>
