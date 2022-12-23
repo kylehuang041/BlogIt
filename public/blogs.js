@@ -207,8 +207,10 @@
     let content = blogElem.children[1].value;
     if (!title || !content) return;
     if (!id) {
-      let date = blogElem.querySelector("p").textContent;
-      date = date.replace(/( PM|(,))/g, "").replace(/[/]+/g, "-");
+      let date = new Date(blogElem.querySelector("p").textContent)
+        .toLocaleString('en-US', { hour12: false }).replace(",", "")
+        .replace(/[/]+/g, "-").replace(/(\d+)-(\d+)-(\d+)/g, "$3-$1-$2");
+      console.log(date);
       if (!date) return;
       saveBlogRequest([title, content, date], blogElem); // create blog
     } else {
@@ -260,7 +262,8 @@
   /**
    * enables search icon or blog input save button
    */
-  function textInputBehavior() {
+  function textInputBehavior(ev) {
+    ev.preventDefault();
     let searchIcon = this.parentNode.children[0];
     let saveIcon = this.parentNode.children[2].children[1].children[0];
     if (searchIcon.getAttribute("id") === "search-icon") searchIcon.disabled = false;
