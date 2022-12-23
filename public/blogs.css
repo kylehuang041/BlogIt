@@ -1,0 +1,257 @@
+/*
+ * Name: Kyle Huang
+ * Date: 12/19/2022
+ *
+ * This is the styles.css page of index.html.
+ * It has the design/style code to make it more visually appealing.
+ */
+
+:root {
+  --white-color: #fff;
+  --blog-btn-size: 2em;
+  --nav-bg-color: #0f394c;
+  --bg-color: #001417;
+  --title-color: #2f9cca;
+  --nav-btn-color: radial-gradient(#fff, #c5c5c5);
+  --blog-bg-color: #122c36;
+  --input-border: 0.15rem solid rgb(45, 100, 124);
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: 'Work Sans', sans-serif;
+  letter-spacing: 0.1rem;
+  color: var(--white-color);
+  min-height: 100vh;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* navigation */
+nav {
+  padding: 0 0.5em;
+  display: flex;
+  justify-content: space-between;
+  background: var(--nav-bg-color);
+}
+
+#nav-list {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+}
+
+#nav-list li {
+  list-style: none;
+}
+
+/* title */
+header {
+  text-align: left;
+  color: var(--title-color);
+  display: flex;
+  cursor: pointer;
+}
+
+header h1:hover {
+  text-shadow: 0 0 5px rgb(0, 116, 106);
+}
+
+header h1 {
+  align-self: center;
+}
+
+header h1, #blog-container {
+  margin: 0 auto;
+}
+
+/* create and delete button */
+.nav-btn {
+  padding: 0.2em 0.6em;
+  border-radius: 10px;
+  border-color: transparent;
+  background: var(--nav-btn-color);
+}
+
+.nav-btn:hover {
+  background: var(--white-color);
+}
+
+/* color changer switch */
+#color-changer {
+  display: flex;
+  align-items: center;
+}
+
+#color-changer > span {
+  font-size: 0.7rem;
+}
+
+#color-change-container {
+  background: var(--white-color);
+  width: 2em;
+  height: 1em;
+  display: flex;
+  justify-content: flex;
+  align-items: center;
+  border-radius: 1.2em;
+  position: relative;
+  cursor: pointer;
+  margin: 0 0.3em;
+}
+
+#color-change-circle {
+  display: inline-block;
+  background: rgb(143, 143, 143);
+  width: 1em;
+  height: 1em;
+  border-radius: 1.2em;
+  position: absolute;
+}
+
+#color-change-circle:hover {
+  background: rgb(87, 87, 87);
+  transition: left 0.2s ease-in-out;
+}
+
+/* main */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* search bar & error Message */
+#search-container, #error {
+  margin-top: 1.1em;
+}
+
+#search-container {
+  display: flex;
+  border-radius: 50px;
+  border: var(--input-border);
+  width: 50%;
+  min-width: 18rem;
+  height: 35px;
+}
+
+#search-bar {
+  border: none;
+  outline: none;
+  position: relative;
+  width: 80%;
+  left: 0.6em;
+}
+
+.fa-magnifying-glass {
+  align-self: center;
+  position: relative;
+  left: 0.75em;
+  cursor: pointer;
+}
+
+.fa-magnifying-glass:hover {
+  color:rgb(44, 179, 206);
+}
+
+#error {
+  background: rgb(165, 69, 69);
+  width: 70%;
+  padding: 0.75em 1em;
+  border-radius: 20px;
+}
+
+/* blogs */
+.blogs {
+  margin: 1.2em auto;
+  background: var(--blog-bg-color);
+  width: 80vw;
+  max-width: 920px;
+  padding: 0.9em 1.2em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+  border-radius: 5px;
+}
+
+.text-inputs:focus {
+  outline: 0.15rem solid rgb(24, 78, 61);
+}
+
+#title {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.text-inputs {
+  padding: 0.3rem;
+  box-sizing: border-box;
+  background: transparent;
+  border-radius: 10px;
+  border: var(--input-border);
+  color: var(--white-text);
+  font-size: 1.6em;
+}
+
+.blog-div-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.blog-div-2 {
+  display: inline-block;
+}
+
+.blog-btn {
+  height: var(--blog-btn-size);
+  width: var(--blog-btn-size);
+  font-size: 0.95rem;
+  border-radius: 10px;
+  border: none;
+}
+
+#delete-btn {
+  margin-left: calc(var(--blog-btn-size) / 3);
+}
+
+#delete-btn:hover {
+  background: rgb(244, 120, 120);
+}
+
+#save-btn:hover {
+  background: rgb(18, 172, 219);
+}
+
+/* color change */
+.search-color-change {
+  color: #00416f;
+}
+
+.color-switch-circle-change {
+  left: 17px;
+}
+
+.blog-color-change {
+  color: #00416f;
+  background: #a9e1ca;
+}
+
+.body-bg-color-change {
+  background: #d9ffff;
+}
+
+.title-bg-color-change {
+  color: rgb(0, 69, 83);
+}
+
+.nav-bg-color-change {
+  background: #5ab6dd;
+}
+
+/* Class(es) used by blog.js */
+.hidden {
+  display: none;
+}
