@@ -4,7 +4,7 @@ Write random stuff :), anything you want ;)
 
 ## Branches
 
-`fullstack`: uses node web service with database and REST API
+`fullstack`: uses node web service with database and REST API  
 `localStorage`: uses only local storage ([BlogIt](https://kylehuang041.github.io/BlogIt/) published page)
 
 ## Languages and Technologies
