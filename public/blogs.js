@@ -62,15 +62,17 @@
    * @param ev event
    */
   async function searchBlogRequest(ev) {
-    if ((ev.key === 'Enter' && ev.target.value && prevSearchQry != ev.target.value)
+    if ((ev.key === 'Enter' && ev.target.value && prevSearchQry != ev.target.value.trim())
       || (this.classList.contains("fa-magnifying-glass") && ev.target.value)) {
-      prevSearchQry = ev.target.value;
+      let curSearchQry = ev.target.value.trim();
+      prevSearchQry = curSearchQry;
+      ev.target.value = curSearchQry;
       let blogContainer = document.querySelector("#blog-container");
       let error = document.querySelector("#error");
       blogContainer.classList.remove("hidden");
       error.classList.add("hidden");
       try {
-        let res = await fetch(URL_BLOGS_SEARCH_QRY + ev.target.value);
+        let res = await fetch(URL_BLOGS_SEARCH_QRY + curSearchQry);
         await statusCheck(res);
         res = await res.json();
         res = res.blogs ? res.blogs : res;
@@ -449,8 +451,7 @@
   }
 
   /**
-   * changes search input placeholder with an error message given by
-   * node web service bad request
+   * catches error from requests and prints it out on the page
    * @param {errorText} err error message
    */
   function handleError(err) {
