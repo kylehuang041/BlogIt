@@ -22,4 +22,4 @@ Write random stuff :), anything you want ;)
 2. Open terminal
 3. Type npm i && node app.js
 4. Open browser
-5. Type localhost:8000 (2 broke for host D: so don't know how, still fullstack with only localhost, get jebaited :D)
+5. Type localhost:8000 (2 broke for host D: so don't know how, still fullstack with only localhost and without framework/library, get jebaited :D)
